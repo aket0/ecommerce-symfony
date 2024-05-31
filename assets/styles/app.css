@@ -1,3 +1,18 @@
 body {
-    background-color: skyblue;
+    margin: 0;
+    height: 100vh;
+}
+
+.container-form {
+    background-color: rgb(238, 238, 238);
+
+}
+
+input {
+    background-color: white;
+}
+
+form div {
+    padding: 0 !important;
+
 }
