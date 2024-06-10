@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Hello PanierController!
+{% block title %}
+	{% include 'header.html.twig' %}
 {% endblock %}
 
 {% block body %}
@@ -50,8 +50,9 @@
 				{{ total }}
 				Euro</h2>
 
-			<div class="row">
-				<a href="" class="btn btn-primary col-3">Valider la commande</a>
+			<div
+				class="row">
+				{# <a href="" class="btn btn-primary col-3">Valider la commande</a> #}
 				<a href="{{ path('app_panier_remove') }}" class="btn btn-outline-danger col-3">Supprimer le panier</a>
 
 
@@ -60,4 +61,7 @@
 	</div>
 
 
+	{% block footer %}
+		{% include "footer.html.twig" %}
+	{% endblock %}
 {% endblock %}
