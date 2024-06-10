@@ -99,7 +99,17 @@
 </div>
 </div>
 <div class="userPannel bg-secondary">
-    <p style="color: white; font-size: 20px">Welcome ${user} you can <a href="?action/logout" class="text-success" style="font-size: 20px;">logout</a></p>
+    {% if app.user %}
+    <p style="color: white; font-size: 20px">
+        Welcome {{ app.user.username }}! You can 
+        <a href="{{ path('app_logout') }}" class="text-success" style="font-size: 20px;">logout</a>
+    </p>
+{% else %}
+    <p style="color: white; font-size: 20px">
+        Bonjour visiteur ! 
+        <a href="{{ path('app_login') }}" class="text-success" style="font-size: 20px;">login</a>
+    </p>
+{% endif %}
 
 </div>
 <script src="https://kit.fontawesome.com/a904689933.js" crossorigin="anonymous"></script>

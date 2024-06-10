@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}{% include 'header.html.twig' %}Register{% endblock %}
 
 {% block body %}
 <div class="container-fluid container-form p-5 h-100">
-    <div class="row col-md-4 mx-auto">
-       <div class="col-5 mx-auto">
+    <div class=" col-md-4 mx-auto">
+       <div class="d-flex column mx-auto">
         <h1 class=" mb-3 font-weight-normal text-center">Register</h1>
         </div>
         {{ form_errors(registrationForm) }}
@@ -23,4 +23,8 @@
     {{ form_end(registrationForm) }}
     </div>
 </div>
+{% block footer %}
+{% include "footer.html.twig" %}
 {% endblock %}
+{% endblock %}
+

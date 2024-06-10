@@ -14,10 +14,5 @@ class DefaultController extends AbstractController
         return $this->render('index.html.twig');
     }
 
-    #[Route('/header', name: 'header')]
-    public function header(): Response
-    {
-        // Retourne un rendu de vue, par exemple header.html.twig
-        return $this->render('header.html.twig');
-    }
+   
 }

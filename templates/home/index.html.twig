@@ -1,7 +1,11 @@
 {% extends 'base.html.twig' %}
+{% block title %}
+{% include 'header.html.twig' %}
+{% endblock %}
 
 
 {% block body %}
+
 	<div class="container">
 		<h1>Produits</h1>
 		<div class="row">
@@ -26,4 +30,8 @@
 		</div>
 
 	</div>
+	{% block footer %}
+{% include "footer.html.twig" %}
 {% endblock %}
+{% endblock %}
+
