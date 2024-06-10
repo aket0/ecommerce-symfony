@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PanierController!
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1>Produits</h1>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Produit</th>
+					<th scope="col">Prix</th>
+					<th scope="col">Quantité</th>
+					<th scope="col">Action</th>
+
+				</tr>
+			</thead>
+			<tbody>
+
+				{% for item in items %}
+					<tr>
+
+						<td>{{ item.produit.nom }}</td>
+						<td>{{ item.produit.prix }}</td>
+						<td>{{ item.quantity}}</td>
+						<td>
+
+							<a href="{{ path('app_panier_new',{'id':item.produit.id}) }}" class="btn btn-success">+</a>
+							<a href="{{ path('app_panier_produit_remove',{'id':item.produit.id}) }}" class="btn btn-danger">-</a>
+
+							<a href="{{ path('app_panier_produit_delete',{'id':item.produit.id}) }}">Supprimer</a>
+						</td>
+					</tr>
+
+				{% else %}
+					<tr>
+						<td colspan="5">
+							Votre panier est vide</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+
+
+		</table>
+		{% if total >0 %}
+			<h2>
+				Total :
+				{{ total }}
+				Euro</h2>
+
+			<div class="row">
+				<a href="" class="btn btn-primary col-3">Valider la commande</a>
+				<a href="{{ path('app_panier_remove') }}" class="btn btn-outline-danger col-3">Supprimer le panier</a>
+
+
+			</div>
+		{% endif %}
+	</div>
+
+
+{% endblock %}

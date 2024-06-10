@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!
-{% endblock %}
 
 {% block body %}
 	<div class="container">
@@ -18,7 +16,7 @@
 							<p class="card-text">{{ produit.description }}</p>
 							<p class="card-text">{{ produit.prix }}
 								€</p>
-							<a href="#" class="btn btn-outline-success">Ajouter au panier</a>
+							<a href="{{ path('app_panier_new',{'id':produit.id}) }}" class="btn btn-outline-success">Ajouter au panier</a>
 						</div>
 					</div>
 				</div>

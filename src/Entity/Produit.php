@@ -30,6 +30,8 @@ class Produit
     #[ORM\JoinColumn(nullable: false)]
     private ?Categorie $categorie = null;
 
+    
+
     public function getId(): ?int
     {
         return $this->id;
@@ -94,4 +96,6 @@ class Produit
 
         return $this;
     }
+
+    
 }
